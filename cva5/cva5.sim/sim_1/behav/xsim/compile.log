@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/core/cva5_config.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/core/riscv_types.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/core/csr_types.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/core/cva5_types.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/core/amo_alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module amo_alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/l2_arbiter/l2_config_and_types.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/test_benches/sim_mem.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/test_benches/axi_mem_sim.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axi_mem_sim
+ERROR: [VRFC 10-2989] 'RESET_VEC' is not declared [C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/test_benches/axi_mem_sim.sv:106]
+ERROR: [VRFC 10-2865] module 'axi_mem_sim' ignored due to previous errors [C:/Users/dang khoa/Documents/computer_engineering_project/week48/cva5-master/test_benches/axi_mem_sim.sv:27]

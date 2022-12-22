@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../../week48/cva5-master/test_benches/verilator/AXI_DDR_simulation" --include "../../../../../week48/cva5-master/test_benches/verilator" \
+"../../../../../week48/cva5-master/core/cva5_config.sv" \
+"../../../../../week48/cva5-master/core/riscv_types.sv" \
+"../../../../../week48/cva5-master/core/csr_types.sv" \
+"../../../../../week48/cva5-master/core/cva5_types.sv" \
+"../../../../../week48/cva5-master/core/amo_alu.sv" \
+"../../../../../week48/cva5-master/l2_arbiter/l2_config_and_types.sv" \
+"../../../../../week48/cva5-master/test_benches/sim_mem.sv" \
+"../../../../../week48/cva5-master/test_benches/axi_mem_sim.sv" \
+"../../../../../week48/cva5-master/core/axi_to_arb.sv" \
+"../../../../../week48/cva5-master/core/cva5.sv" \
+"../../../../../week48/cva5-master/core/cva5_fifo.sv" \
+"../../../../../week48/cva5-master/core/external_interfaces.sv" \
+"../../../../../week48/cva5-master/core/interfaces.sv" \
+"../../../../../week48/cva5-master/l2_arbiter/l2_arbiter.sv" \
+"../../../../../week48/cva5-master/l2_arbiter/l2_external_interfaces.sv" \
+"../../../../../week48/cva5-master/l2_arbiter/l2_interfaces.sv" \
+"../../../../../week48/cva5-master/l2_arbiter/l2_reservation_logic.sv" \
+"../../../../../week48/cva5-master/l2_arbiter/l2_round_robin.sv" \
+"../../../../../week48/cva5-master/core/lfsr.sv" \
+"../../../../../week48/cva5-master/local_memory/local_memory_interface.sv" \
+"../../../../../week48/cva5-master/core/lutrams/lutram_1w_1r.sv" \
+"../../../../../week48/cva5-master/test_benches/cva5_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

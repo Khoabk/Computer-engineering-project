@@ -1,0 +1,66 @@
+Key metrics
+
+Accuracy:
+Used to indicate the quality of the result for a given task. The units used to measure accuracy depend on the task.
+- For image classification, accuracy is reported as the percentage of correctly classified images.
+- For object detection, accuracy is reported as the mean average precision (mAP), which is related to the trade off between the true positive rate and the false positive rate.
+Factors that affect accuracy include the difficulty of the task and dataset. Accuracy should therefore be interpreted in the context of the difficulty of the task and dataset. Evaluating hardware using well-studied, widely used DNN models, tasks, and datasets can allow one to better interpret the significane of the accuracy metric. MLPerf is used to serve as a common set of well-studied DNN models to evaluate the performance and enable fair comparison of various software frameworks, hardware accelerators, and cloud platforms for both training and inference of DNNs. The suit includes various types of DNNs for a variety of tasks including image classification, object indentification, translation, speech-to-text, recommendation, sentiment analysis and reinforcement learning.
+
+
+
+Throughput and Latency:
+Throughput is used to indicate the amount of data that can be processed or the number of executions of a task that can be completed in a given time period. High throughput is often critical to an application. For data analysis, high throughput means that more data can be analyzed in a given amount of time. Throughput is reported as inferences per second or in the form of runtime interms of seconds per inference.
+
+Latency measures the time between when the input data arrives to a system and when the result is generated. Latency is typically reported in seconds.
+
+There are several factors that affect throughput and latency.
+In terms of throughput, the number of inferences persecond is affected by:
+
+						inferences/second = (operations/second) * 1/(operations/inference)     3.1
+
+Where the number of operations per second is dictated by both the DNN hardware and DNN model, while the number of operations per inference is dictated by the DNN model.
+
+When considering a system comprised of multiple processing elements (PEs), where a PE corresponds to a simplle or primitive core that performs a single MAC operation, the number of operations per second can be further decomposed as follows:
+		operations/second = (1/(cycles/operation) * cycles/second) * number of PEs * utilization of PEs    3.2
+
+The first term reflecs the peak throughput of a single PE.
+The second term reflects the amount of parallelism.
+The last term reflects the degradation due to the inability of the architecture to effectively utilize the PEs.
+
+One can increase the peak throughput of s single PE by increasing the number of cycles per second, which corresponds to a higher clock frequency, by reducing the critical path at the circuit or micro-architectural level, or the number of cycles per operations, which can be affected by the design of the MAC.
+
+To increase the overall throughput, increase the number of PEs, and thus the maximum number of MAC operations that can be performed in parallel. The number of PEs is dictated by the area density of the PE and the area cost of the system. If the area cost of the system is fixed, then increasing the number of PEs requires either increasing the area density of the PE or trading off on-chip storage area for more PEs. Reducing on-chip storage, however, can affect the utilization of the PEs.
+
+Increasing the density of PEs can also be achived by reducing the logic associated with delivering operands to a MAC. This can be achived by controlling multiple MACs with a single piece of logic.
+
+In reality the achievable throughput depends on the actual utilization of those PEs, which is affected by several factors as follows:
+
+			utilization of PEs = (number of active PEs)/(number of PEs) * utilization of active PEs            3.3
+
+The first term reflects the ability to distribute the workload to PEs.
+The second term reflects how efficiently those active PEs are processing the workload.
+The number of active PEs is the number of PEs tha receive work, therefore, it is desirable to distribute the workload to as many PEs as possible. The ability to distribute the workload is determined by the flexibility of the architecture, for instance the on-chip network, to support the layer shapes in the DNN model.
+
+Within the constraints of the on-chip network, the number of active PEs is also determined by the specific allocation of work to PEs by the mapping process.
+
+The utilization of the active PEs is largely dictated by the timely delivery or work to the PEs such that the active PEs do not become idle while waiting for the data to arrive. This can be affected by the bandwidth and latency of the (on-chip and off-chip) memory and net-work. The bandwidth requirements can be affected by the amount of data reuse available in the DNN model and the amount of data reuse that can be exploited by the memory hierachy and dataflow. The dataflow determines the order of operations and where data is stored and reused. The amount of data reused can also be increased using a larger batch size, which is one of the reasons why increasing batch size can increase through put.
+
+While the number of operations per inference in Eq 3.1 depends on the DNN model, the operations per second depends on both the DNN model and the hardware. For example, designning DNN models with efficient layer shapes (also reffered to efficient network architectures) can reduce the number of MAC operations in the DNN model and consequently the number of operations per inference. However, such DNN models can result in a wide range of layer shapes, some of which may have poor utilization of PEs and therefore reduce the overall oparations per second as shown in Eq 3.2.
+
+
+
+Phân chia về hiệu suất
+Phân chia năng lượng
+Cả hai
+
+năng lượng: on-chip power estimation (vivado), power consu
+
+Accuracy ko giảm, tăng hiệu suất, năng lượng
+Định hướng iot tại sao chọn hướng này
+Phù hợp với ngôn ngữ, thiết bị có sẵn : zynq-7000, zynq ultrascale+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+Tăng cường hiệu năng tính toán
+High performance
+Ứng dụng AI cho network security hoặc xử lý ảnh
+
+Port risc-v xuống 1 platform cụ thể, khuyến khích các platform mạnh hơn.
+
+
+
+
+Giai đoạn đồ án tốt nghiệp
+Giai đoạn đầu: chọn board, chon core cho phù hợp

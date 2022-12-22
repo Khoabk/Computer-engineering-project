@@ -1,0 +1,4 @@
+For temporal architectures such as CPUs and GPUs, we will discuss how DNN algorithms can be mapped and optimized on these platforms and how computational transforms on the kernel can reduce the number of multiplications to increase throughput and how the computation can be ordered to improve memory subsystem behavior.
+
+
+For spatial architectures used in accelarators, we will discuss how dataflows can increase data reuse from low cost memories in the memory hierachy to reduce energy consumption and how other architectural features can help optimize data movement.
